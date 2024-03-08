@@ -21,16 +21,39 @@ int rng(int min,int max) {
     return (rand()%(max-min+1))+min;
 }
 
+
+// colors
+void red() {
+  printf("\033[1;31m");
+}
+void blue() {
+  printf("\033[1;34m");
+}
+void whiteBold() {
+  printf("\033[1;37m");
+}
+void yellow() {
+  printf("\033[1;33m");
+}
+void resetCLR() {
+  printf("\033[0m");
+}
+void yellowNRM() {
+    printf("\033[0;33m");
+}
+void redNRM() {
+    printf("\033[0;31m");
+}
+
 void teamfight(char* teams[],int numTeams) {
-    printf("\n");
     if((numTeams%2)!=0){
         teams = realloc(teams, (numTeams + 1) * sizeof(char*));
         teams[numTeams] = malloc(50 * sizeof(char));
         strcpy(teams[numTeams],"tmp");
         numTeams++;
     }
-    yellow();
-    printf("--------------------------------\n");
+    whiteBold();
+    printf("------------------------------\n");
     resetCLR();
     int score1;
     int score2;
@@ -44,13 +67,17 @@ void teamfight(char* teams[],int numTeams) {
           say(teams[i]);
           say(" ");
           printf("%d",score1);
+          resetCLR();
+          whiteBold();
           say(" - ");
+          resetCLR();
+          blue();
           say(teams[i+1]);
           say(" ");
           printf("%d\n",score2);
           resetCLR();
-          yellow();
-          printf("--------------------------------\n");
+          whiteBold();
+          printf("------------------------------\n");
           resetCLR();
           if(score1>score2){
             for (int j=i+1;j<numTeams-1;j++){
@@ -72,8 +99,10 @@ void teamfight(char* teams[],int numTeams) {
             break;
      }
     }
-    yellow();
+    whiteBold();
     say("vinqueur:");
+    resetCLR();
+    yellow();
     printf("\n\t");
     say("+----------------+");
     printf("\n\t");
@@ -186,30 +215,8 @@ void drawCup() {
     resetCLR();
 }
 
-// colors
-void red() {
-  printf("\033[1;31m");
-}
-void blue() {
-  printf("\033[1;34m");
-}
-void whiteBold() {
-  printf("\033[1;37m");
-}
-void yellow() {
-  printf("\033[1;33m");
-}
-void resetCLR() {
-  printf("\033[0m");
-}
-void yellowNRM() {
-    printf("\033[0;33m");
-}
-void redNRM() {
-    printf("\033[0;31m");
-}
-
 void affichage(){
+    whiteBold();
     say("===(mini_jeu_foot)===");
     printf("\n");
     int numTeams;
@@ -234,6 +241,7 @@ void affichage(){
         scanf("%s",teams[i]);
 
     }
+    resetCLR();
     teamfight(teams,numTeams);
 
     drawCup();
