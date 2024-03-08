@@ -75,7 +75,7 @@ void teamfight(char* teams[],int numTeams) {
     yellow();
     say("vinqueur:");
     printf("\n\t");
-    say("+------------+");
+    say("+----------------+");
     printf("\n\t");
     say("|");
     printf("\t");
@@ -87,7 +87,7 @@ void teamfight(char* teams[],int numTeams) {
     printf("\t");
     say("|");
     printf("\n\t");
-    say("+------------+");
+    say("+----------------+");
     printf("\n");
     resetCLR();
 }
