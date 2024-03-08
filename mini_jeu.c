@@ -106,7 +106,7 @@ void teamfight(char* teams[],int numTeams) {
     yellow();
     printf("\n\t");
     say("+---------------------------------+");
-    printf("\n\t\t");
+    printf("\n\t\t\t");
     resetCLR();
     red();
     say(teams[0]);
