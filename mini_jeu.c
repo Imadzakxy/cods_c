@@ -72,9 +72,10 @@ void teamfight(char* teams[],int numTeams) {
           say(" - ");
           resetCLR();
           blue();
-          say(teams[i+1]);
           say(" ");
-          printf("%d\n",score2);
+          printf("%d ",score2);
+          say(teams[i+1]);
+          printf("\n");
           resetCLR();
           whiteBold();
           printf("------------------------------\n");
@@ -106,17 +107,13 @@ void teamfight(char* teams[],int numTeams) {
     printf("\n\t");
     say("+---------------------------------+");
     printf("\n\t\t");
-    say("|");
     printf("\t");
     resetCLR();
     red();
     say(teams[0]);
     resetCLR();
     yellow();
-    printf("\t");
-    say(" | ");
-    printf("\n\t");
-    say("+---------------------------------+");
+    printf("\n\t"); say("+---------------------------------+");
     printf("\n");
     resetCLR();
 }
